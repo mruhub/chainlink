@@ -91,6 +91,7 @@ describe('End to end', () => {
     const txHash = match[1]
     expect(txHash).toBeDefined()
 
+    console.log('!!!!!!!!!!!!!!!!!! 3')
     // Navigate to transactions page
     await clickTransactionsMenuItem(page)
     await pupExpect(page).toMatchElement('h4', { text: 'Transactions' })
@@ -99,6 +100,7 @@ describe('End to end', () => {
     // Navigate to transaction page and check for the transaction
     await pupExpect(page).toClick('a', { text: txHash })
 
+    console.log('!!!!!!!!!!!!!!!!!! 4')
     // Navigate to Explorer
     await new Promise(resolve => setTimeout(resolve, 5000)) // Wait for CL Node to push SyncEvent
     await page.goto('http://localhost:8080')
@@ -106,6 +108,7 @@ describe('End to end', () => {
     await pupExpect(page).toFill('form input', runId)
     await pupExpect(page).toClick('button', { text: 'Search' })
 
+    console.log('!!!!!!!!!!!!!!!!!! 5')
     await new Promise(resolve => setTimeout(resolve, 500)) // FIXME not sure why we need to wait here
     await pupExpect(page).toMatch(runId)
     await pupExpect(page).toClick('a', { text: runId })

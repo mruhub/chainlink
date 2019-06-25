@@ -158,6 +158,7 @@ func (sp *StatsPusher) pushEvents() error {
 }
 
 func (sp *StatsPusher) syncEvent(event *models.SyncEvent) error {
+	logger.Debugw("AAAAAAAAAAAAAAAAAAAA:", "body", event.Body)
 	sp.WSClient.Send([]byte(event.Body))
 
 	message, err := sp.WSClient.Receive()
