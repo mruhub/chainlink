@@ -13,12 +13,5 @@
     "removeComments": false,
     "strict": true,
     "esModuleInterop": true
-  },
-  "include": [
-    "src/**/*"
-  ],
-  "files": [
-    "@types/redux-object.d.ts",
-    "@types/use-react-hooks.d.ts"
-  ]
+  }
 }
